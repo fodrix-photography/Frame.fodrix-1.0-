@@ -1,14 +1,3 @@
-export type PreDesignFrame = {
-  id: string;
-  image: string;
-  quality: string;
-  price: number;
-  category: string;
-  subCategory: string;
-  description: string;
-  tags: string[];
-}
-
 export default {
   name: 'preDesignFrames',
   title: 'Pre Design Frames',
@@ -18,59 +7,99 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
-      description: 'Title of the frame',
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'image',
       title: 'Image',
       type: 'image',
-      description: 'Image of the frame',
       options: {
         hotspot: true,
       },
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'quality',
       title: 'Quality',
       type: 'string',
-      description: 'Quality of the frame',
+      validation: (Rule: any) => Rule.required(),
     },
     {
-      name: 'size',
-      title: 'Size',
-      type: 'string',
-      description: 'Size of the frame',
+      name: 'sizes',
+      title: 'Sizes',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags'
+      },
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'price',
       title: 'Price',
       type: 'number',
-      description: 'Price of the frame',
+      validation: (Rule: any) => Rule.required().min(0),
     },
     {
       name: 'category',
       title: 'Category',
       type: 'string',
-      description: 'Category of the frame',
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'subCategory',
       title: 'Sub Category',
       type: 'string',
-      description: 'Sub Category of the frame',
+      validation: (Rule: any) => Rule.required(),
     },
     {
-      name: 'description',  
+      name: 'description',
       title: 'Description',
       type: 'text',
-      description: 'Description of the frame',
     },
-
   ],
   preview: {
     select: {
-        title: 'title',
-        image: 'image',
-    }
-  }
-}
+      title: 'title',
+      subCategory: 'subCategory',
+      category: 'category',
+      image: 'image',
+      price: 'price',
+    },
+    prepare({ title, subCategory, category, image, price }: any) {
+      return {
+        title: title || 'Untitled',
+        subtitle: `${category || 'No category'} → ${subCategory || 'No subcategory'} • ₹${price || 0}`,
+        media: image,
+      };
+    },
+  },
+  orderings: [
+    {
+      title: 'Category A-Z',
+      name: 'categoryAsc',
+      by: [
+        { field: 'category', direction: 'asc' },
+        { field: 'title', direction: 'asc' },
+      ],
+    },
+    {
+      title: 'Subcategory A-Z',
+      name: 'subcategoryAsc',
+      by: [
+        { field: 'subCategory', direction: 'asc' },
+        { field: 'title', direction: 'asc' },
+      ],
+    },
+    {
+      title: 'Price Low-High',
+      name: 'priceAsc',
+      by: [{ field: 'price', direction: 'asc' }],
+    },
+    {
+      title: 'Price High-Low',
+      name: 'priceDesc',
+      by: [{ field: 'price', direction: 'desc' }],
+    },
+  ],
+};
