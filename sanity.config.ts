@@ -28,7 +28,7 @@ export default defineConfig({
                 
                 const frames = await client.fetch(query)
                 const uniqueSubCategories = [...new Set(frames.map((f: any) => f.subCategory))]
-                  .filter(Boolean)
+                  .filter((subCategory): subCategory is string => typeof subCategory === 'string' && subCategory.length > 0)
                   .sort()
                 
                 return S.list()
@@ -36,7 +36,7 @@ export default defineConfig({
                   .items([
                     S.divider(),
                     // Dynamic subcategory items
-                    ...uniqueSubCategories.map(subCategory =>
+                    ...uniqueSubCategories.map((subCategory: string) =>
                       S.listItem()
                         .title(subCategory)
                         .child(
@@ -70,12 +70,21 @@ export default defineConfig({
                   .filter('_type == "multipleCustomFrame"')
               ),
             
+            // Marketing Tools
+            S.listItem()
+              .title('Marketing Tools')
+              .child(
+                S.documentList()
+                  .title('Marketing Tools')
+                  .filter('_type == "marketingTools"')
+              ),
+            
             // Add a divider
             S.divider(),
             
             // Keep other document types
             ...S.documentTypeListItems().filter(
-              listItem => !['preDesignFrames', 'singleCustomFrame', 'multipleCustomFrame'].includes(listItem.getId() as string)
+              listItem => !['preDesignFrames', 'singleCustomFrame', 'multipleCustomFrame', 'marketingTools'].includes(listItem.getId() as string)
             )
           ])
     }),
