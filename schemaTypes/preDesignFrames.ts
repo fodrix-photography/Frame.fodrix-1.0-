@@ -57,6 +57,13 @@ export default {
       title: 'Description',
       type: 'text',
     },
+    {
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean',
+      description: 'Toggle to show this frame in the featured collection on the home page',
+      initialValue: false,
+    },
   ],
   preview: {
     select: {
