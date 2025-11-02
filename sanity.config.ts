@@ -117,12 +117,21 @@ export default defineConfig({
                   .defaultOrdering([{field: 'featured', direction: 'desc'}, {field: 'order', direction: 'asc'}])
               ),
             
+            // Social Links
+            S.listItem()
+              .title('Social Links')
+              .child(
+                S.documentList()
+                  .title('Social Links')
+                  .filter('_type == "socialLinks"')
+              ),
+            
             // Add a divider
             S.divider(),
             
             // Keep other document types
             ...S.documentTypeListItems().filter(
-              listItem => !['preDesignFrames', 'singleCustomFrame', 'multipleCustomFrame', 'marketingTools', 'faq', 'privacyPolicy', 'termsOfService', 'review'].includes(listItem.getId() as string)
+              listItem => !['preDesignFrames', 'singleCustomFrame', 'multipleCustomFrame', 'marketingTools', 'faq', 'privacyPolicy', 'termsOfService', 'review', 'socialLinks'].includes(listItem.getId() as string)
             )
           ])
     }),
