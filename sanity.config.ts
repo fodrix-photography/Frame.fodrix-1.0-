@@ -79,12 +79,50 @@ export default defineConfig({
                   .filter('_type == "marketingTools"')
               ),
             
+            // FAQ
+            S.listItem()
+              .title('FAQ')
+              .child(
+                S.documentList()
+                  .title('FAQ')
+                  .filter('_type == "faq"')
+                  .defaultOrdering([{field: 'order', direction: 'asc'}])
+              ),
+            
+            // Privacy Policy
+            S.listItem()
+              .title('Privacy Policy')
+              .child(
+                S.documentList()
+                  .title('Privacy Policy')
+                  .filter('_type == "privacyPolicy"')
+              ),
+            
+            // Terms of Service
+            S.listItem()
+              .title('Terms of Service')
+              .child(
+                S.documentList()
+                  .title('Terms of Service')
+                  .filter('_type == "termsOfService"')
+              ),
+            
+            // Reviews
+            S.listItem()
+              .title('Reviews')
+              .child(
+                S.documentList()
+                  .title('Reviews')
+                  .filter('_type == "review"')
+                  .defaultOrdering([{field: 'featured', direction: 'desc'}, {field: 'order', direction: 'asc'}])
+              ),
+            
             // Add a divider
             S.divider(),
             
             // Keep other document types
             ...S.documentTypeListItems().filter(
-              listItem => !['preDesignFrames', 'singleCustomFrame', 'multipleCustomFrame', 'marketingTools'].includes(listItem.getId() as string)
+              listItem => !['preDesignFrames', 'singleCustomFrame', 'multipleCustomFrame', 'marketingTools', 'faq', 'privacyPolicy', 'termsOfService', 'review'].includes(listItem.getId() as string)
             )
           ])
     }),
