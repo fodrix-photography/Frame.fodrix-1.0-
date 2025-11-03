@@ -6,7 +6,9 @@ import aboutUs from './aboutUs'
 import faq from './faq'
 import privacyPolicy from './privacyPolicy'
 import termsOfService from './termsOfService'
+import returnRefundPolicy from './returnRefundPolicy'
+import shippingPolicy from './shippingPolicy'
 import review from './review'
 import socialLinks from './socialLinks'
 
-export const schemaTypes = [preDesignFrames, singleCustomFrame, multipleCustomFrame, marketingTools, aboutUs, faq, privacyPolicy, termsOfService, review, socialLinks]
+export const schemaTypes = [preDesignFrames, singleCustomFrame, multipleCustomFrame, marketingTools, aboutUs, faq, privacyPolicy, termsOfService, returnRefundPolicy, shippingPolicy, review, socialLinks]

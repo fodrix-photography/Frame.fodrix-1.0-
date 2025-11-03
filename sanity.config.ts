@@ -107,6 +107,24 @@ export default defineConfig({
                   .filter('_type == "termsOfService"')
               ),
             
+            // Return & Refund Policy
+            S.listItem()
+              .title('Return & Refund Policy')
+              .child(
+                S.documentList()
+                  .title('Return & Refund Policy')
+                  .filter('_type == "returnRefundPolicy"')
+              ),
+            
+            // Shipping Policy
+            S.listItem()
+              .title('Shipping Policy')
+              .child(
+                S.documentList()
+                  .title('Shipping Policy')
+                  .filter('_type == "shippingPolicy"')
+              ),
+            
             // Reviews
             S.listItem()
               .title('Reviews')
@@ -131,7 +149,7 @@ export default defineConfig({
             
             // Keep other document types
             ...S.documentTypeListItems().filter(
-              listItem => !['preDesignFrames', 'singleCustomFrame', 'multipleCustomFrame', 'marketingTools', 'faq', 'privacyPolicy', 'termsOfService', 'review', 'socialLinks'].includes(listItem.getId() as string)
+              listItem => !['preDesignFrames', 'singleCustomFrame', 'multipleCustomFrame', 'marketingTools', 'faq', 'privacyPolicy', 'termsOfService', 'returnRefundPolicy', 'shippingPolicy', 'review', 'socialLinks'].includes(listItem.getId() as string)
             )
           ])
     }),
