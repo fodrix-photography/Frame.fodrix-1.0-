@@ -12,5 +12,6 @@ import review from './review'
 import socialLinks from './socialLinks'
 import seo from './seo'
 import affiliateSeo from './affiliateSeo'
+import framesSeo from './framesSeo'
 
-export const schemaTypes = [preDesignFrames, singleCustomFrame, multipleCustomFrame, marketingTools, aboutUs, faq, privacyPolicy, termsOfService, returnRefundPolicy, shippingPolicy, review, socialLinks, seo, affiliateSeo]
+export const schemaTypes = [preDesignFrames, singleCustomFrame, multipleCustomFrame, marketingTools, aboutUs, faq, privacyPolicy, termsOfService, returnRefundPolicy, shippingPolicy, review, socialLinks, seo, affiliateSeo, framesSeo]
