@@ -11,5 +11,6 @@ import shippingPolicy from './shippingPolicy'
 import review from './review'
 import socialLinks from './socialLinks'
 import seo from './seo'
+import affiliateSeo from './affiliateSeo'
 
-export const schemaTypes = [preDesignFrames, singleCustomFrame, multipleCustomFrame, marketingTools, aboutUs, faq, privacyPolicy, termsOfService, returnRefundPolicy, shippingPolicy, review, socialLinks, seo]
+export const schemaTypes = [preDesignFrames, singleCustomFrame, multipleCustomFrame, marketingTools, aboutUs, faq, privacyPolicy, termsOfService, returnRefundPolicy, shippingPolicy, review, socialLinks, seo, affiliateSeo]
