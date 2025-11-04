@@ -1,4 +1,5 @@
 import { defineType, defineField } from 'sanity'
+import { seoObject } from './seoObject'
 
 export default defineType({
   name: 'shippingPolicy',
@@ -39,6 +40,7 @@ export default defineType({
       ],
       validation: (Rule) => Rule.required(),
     }),
+    seoObject,
   ],
   preview: {
     select: {

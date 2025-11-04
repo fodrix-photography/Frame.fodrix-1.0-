@@ -10,5 +10,6 @@ import returnRefundPolicy from './returnRefundPolicy'
 import shippingPolicy from './shippingPolicy'
 import review from './review'
 import socialLinks from './socialLinks'
+import seo from './seo'
 
-export const schemaTypes = [preDesignFrames, singleCustomFrame, multipleCustomFrame, marketingTools, aboutUs, faq, privacyPolicy, termsOfService, returnRefundPolicy, shippingPolicy, review, socialLinks]
+export const schemaTypes = [preDesignFrames, singleCustomFrame, multipleCustomFrame, marketingTools, aboutUs, faq, privacyPolicy, termsOfService, returnRefundPolicy, shippingPolicy, review, socialLinks, seo]

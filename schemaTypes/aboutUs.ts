@@ -1,4 +1,5 @@
 import { defineType, defineField } from 'sanity'
+import { seoObject } from './seoObject'
 
 export default defineType({
   name: 'aboutUs',
@@ -166,6 +167,7 @@ export default defineType({
         },
       ],
     }),
+    seoObject,
   ],
   preview: {
     select: {

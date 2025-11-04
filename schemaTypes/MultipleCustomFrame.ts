@@ -1,3 +1,5 @@
+import { seoObject } from './seoObject'
+
 export default {
     name: 'multipleCustomFrame',
     title: 'Multiple Custom Frame',
@@ -74,6 +76,7 @@ export default {
             description: 'Toggle to show this frame in the featured collection on the home page',
             initialValue: false,
         },
+        seoObject,
     ],
     preview: {
         select: {
