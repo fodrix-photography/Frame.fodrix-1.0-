@@ -13,5 +13,7 @@ import socialLinks from './socialLinks'
 import seo from './seo'
 import affiliateSeo from './affiliateSeo'
 import framesSeo from './framesSeo'
+import heroImages from './heroImages'
+import exploreByStyle from './exploreByStyle'
 
-export const schemaTypes = [preDesignFrames, singleCustomFrame, multipleCustomFrame, marketingTools, aboutUs, faq, privacyPolicy, termsOfService, returnRefundPolicy, shippingPolicy, review, socialLinks, seo, affiliateSeo, framesSeo]
+export const schemaTypes = [preDesignFrames, singleCustomFrame, multipleCustomFrame, marketingTools, aboutUs, faq, privacyPolicy, termsOfService, returnRefundPolicy, shippingPolicy, review, socialLinks, seo, affiliateSeo, framesSeo, heroImages, exploreByStyle]
