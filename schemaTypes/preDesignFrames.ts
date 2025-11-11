@@ -43,6 +43,27 @@ export default {
       validation: (Rule: any) => Rule.required().min(0),
     },
     {
+      name: 'originalPrice',
+      title: 'Original Price',
+      type: 'number',
+      description: 'Original price before discount (optional)',
+      validation: (Rule: any) => Rule.min(0),
+    },
+    {
+      name: 'discountedPrice',
+      title: 'Discounted Price',
+      type: 'number',
+      description: 'Discounted price (optional)',
+      validation: (Rule: any) => Rule.min(0),
+    },
+    {
+      name: 'discountPercentage',
+      title: 'Discount Percentage',
+      type: 'number',
+      description: 'Discount percentage (optional)',
+      validation: (Rule: any) => Rule.min(0).max(100),
+    },
+    {
       name: 'category',
       title: 'Category',
       type: 'string',
